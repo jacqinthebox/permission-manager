@@ -51,18 +51,29 @@ rules:
     verbs:
       - "*"
 # ---
-# apiVersion: rbac.authorization.k8s.io/v1
-# kind: ClusterRole
-# metadata:
-#   name: template-namespaced-resources___consultant
-# rules:
-#   - apiGroups:
-#       - "*"
-#     resources:
-#       - "configmaps"
-#       - "pods"
-#     verbs:
-#       - "*"
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: template-namespaced-resources___consultant
+rules:
+  - apiGroups:
+      - "*"
+    resources:
+      - "configmaps"
+      - "pods"
+    verbs:
+      - "*"
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: template-namespaced-resources___reader
+rules:
+  - apiGroups:
+      - "*"
+    resources:
+      - "*"
+    verbs: ["get", "list", "watch"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
